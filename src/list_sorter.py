@@ -10,9 +10,17 @@ def list_sorter(arg, num):
             A list or nested list.
         num:
             A number to represent index to sort by.
-    Raises:
-        N/A
+    Returns:
+        A list or nested list, sorted alphabetically by the index given in second argument.
     """
+
+    if isinstance(arg[0], list) == False:
+        arg.sort(key=lambda x: x[num])
+    else:
+        print('this is a nested list')
+        for lists in arg:
+            lists.sort(key=lambda x: x[num])
+    print(arg)       
     return arg
 
 
